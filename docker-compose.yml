@@ -1,0 +1,12 @@
+services:
+  duckdns:
+    image: linuxserver/duckdns:latest
+    container_name: duckdns
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Madrid
+      - SUBDOMAINS=<sub_dominio>
+      - TOKEN=<token>
+      - LOG_FILE=true
+    volumes:
+      - ./logs:/config
