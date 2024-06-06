@@ -4,9 +4,9 @@ services:
     container_name: duckdns
     restart: unless-stopped
     environment:
+      - SUBDOMAINS=<sub_dominio> # Subdominio (sin ".duckdns.org"). Para añadir más de 1 subdominio, separar por "," : subdominio1,subdominio2,subdominio3...
+      - TOKEN=<token> # Tocken de Duck DNS
       - TZ=Europe/Madrid
-      - SUBDOMAINS=<sub_dominio>
-      - TOKEN=<token>
       - LOG_FILE=true
     volumes:
       - ./logs:/config
